@@ -4,6 +4,7 @@ import checkMarkIconDark from '../../assets/checkmark-dark.svg';
 import checkMarkIconLight from '../../assets/checkmark-light.svg';
 import SkillList from '../../common/SkillList';
 import { useTheme } from '../../common/ThemeContext';
+import { motion } from 'framer-motion';
 
 function Skills() {
   const { theme } = useTheme();
@@ -23,7 +24,14 @@ function Skills() {
         <React.Fragment key={index}>
           <div className={styles.skillList}>
             {category.map((skill) => (
-              <SkillList key={skill} src={checkMarkIcon} skill={skill} />
+              <motion.div
+                key={skill}
+                whileHover={{ scale: 1.1, rotate: 3 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                style={{ cursor: "default" }}
+              >
+                <SkillList src={checkMarkIcon} skill={skill} />
+              </motion.div>
             ))}
           </div>
           <hr />

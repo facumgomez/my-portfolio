@@ -7,6 +7,7 @@ import sorteoplus from '../../assets/sorteoplus.png';
 import memotest from '../../assets/memotest.png';
 import encriptador from '../../assets/encriptador.png';
 import ProjectCard from '../../common/ProjectCard';
+import { motion } from 'framer-motion';
 
 function Projects() {
   const projectsData = [
@@ -22,15 +23,21 @@ return (
   <section id="projects" className={styles.container}>
       <h1 className="sectionTitle">Proyectos</h1>
       <div className={styles.projectsContainer}>
-        {/* Renderizado dinámico usando .map() */}
-        {projectsData.map((project) => (
-          <ProjectCard
-            key={project.id} // En React siempre que mapeamos necesitamos una prop 'key' única
-            src={project.src}
-            link={project.link}
-            h3={project.h3}
-            p={project.p}
-          />
+        {projectsData.map((project, index) => (
+          <motion.div
+            key={project.id}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: index * 0.15 }}
+          >
+            <ProjectCard
+              src={project.src}
+              link={project.link}
+              h3={project.h3}
+              p={project.p}
+            />
+          </motion.div>
         ))}
       </div>
     </section>

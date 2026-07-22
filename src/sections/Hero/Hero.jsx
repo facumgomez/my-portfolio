@@ -11,6 +11,7 @@ import emailDark from '../../assets/email-dark.svg';
 import CV from '../../assets/cv.pdf';
 import { useTheme } from '../../common/ThemeContext';
 import Swal from 'sweetalert2';
+import { motion } from 'framer-motion'
 
 function Hero() {
   const { theme, toggleTheme } = useTheme();
@@ -55,7 +56,12 @@ function Hero() {
           onClick={toggleTheme}
         />
       </div>
-      <div className={styles.info}>
+      <motion.div 
+        className={styles.info}
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <h1>
           Facundo
           <br />
@@ -80,7 +86,7 @@ function Hero() {
         <a href={CV} download>
           <button className="hover">Descargar CV</button>
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 }
