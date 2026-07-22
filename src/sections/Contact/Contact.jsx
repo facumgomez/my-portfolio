@@ -1,43 +1,77 @@
 import styles from './ContactStyles.module.css';
+import Swal from 'sweetalert2';
+import { useTheme } from '../../common/ThemeContext';
 
 function Contact() {
+  const { theme } = useTheme();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const form = e.target;
+    const data = new FormData(form);
+    const endpoint = "https://formspree.io/f/mojglbjl";
+
+    const alertBackground = theme === 'light' ? '#ffffff' : '#222222';
+    const alertColor = theme === 'light' ? '#000000' : '#ffffff';
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: '¡Mensaje enviado!',
+          text: 'Gracias por contactarte, te responderé a la brevedad.',
+          confirmButtonColor: '#3085d6',
+          background: alertBackground,
+          color: alertColor,
+        });
+        form.reset();
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Hubo un problema al enviar el mensaje. Inténtalo más tarde.',
+          confirmButtonColor: '#3085d6',
+          background: alertBackground,
+          color: alertColor,
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error de red',
+        text: 'Por favor, revisa tu conexión a internet.',
+        confirmButtonColor: '#3085d6',
+        background: alertBackground,
+        color: alertColor,
+      });
+    }
+  };
+
   return (
     <section id="contact" className={styles.container}>
       <h1 className="sectionTitle">Contact</h1>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <div className="formGroup">
-          <label htmlFor="name" hidden>
-            Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Name"
-            required
-          />
+          <label htmlFor="name" className="srOnly">Name</label>
+          <input type="text" name="name" id="name" placeholder="Name" required />
         </div>
         <div className="formGroup">
-          <label htmlFor="email" hidden>
-            Email
-          </label>
-          <input
-            type="text"
-            name="email"
-            id="email"
-            placeholder="Email"
-            required
-          />
+          <label htmlFor="email" className="srOnly">Email</label>
+          <input type="email" name="email" id="email" placeholder="Email" required />
         </div>
         <div className="formGroup">
-          <label htmlFor="message" hidden>
-            Message
-          </label>
-          <textarea
-            name="message"
-            id="message"
-            placeholder="Message"
-            required></textarea>
+          <label htmlFor="message" className="srOnly">Message</label>
+          <textarea name="message" id="message" placeholder="Message" required></textarea>
         </div>
         <input className="hover btn" type="submit" value="Submit" />
       </form>

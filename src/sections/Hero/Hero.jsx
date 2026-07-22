@@ -22,6 +22,9 @@ function Hero() {
 
   const copyEmailToClipboard = () => {
     const email = "gomezmfacundo@gmail.com";
+    const alertBackground = theme === 'light' ? '#ffffff' : '#222222';
+    const alertColor = theme === 'light' ? '#000000' : '#ffffff';
+
     navigator.clipboard.writeText(email).then(() => {
       Swal.fire({
         position: 'top-end',
@@ -29,6 +32,8 @@ function Hero() {
         title: '¡Correo copiado!',
         text: `El correo ${email} ha sido copiado al portapapeles.`,
         confirmButtonColor: '#3085d6',
+        background: alertBackground,
+        color: alertColor,
       });
     }).catch(err => {
       console.error("Error al copiar el correo: ", err);
@@ -58,10 +63,10 @@ function Hero() {
         </h1>
         <h2>Frontend Developer</h2>
         <span>
-          <a href="https://linkedin.com/in/facundo-m-gomez" target="_blank">
+          <a href="https://linkedin.com/in/facundo-m-gomez" target="_blank" rel="noopener noreferrer">
             <img src={linkedinIcon} alt="Linkedin icon" />
           </a>
-          <a href="https://github.com/facumgomez" target="_blank">
+          <a href="https://github.com/facumgomez" target="_blank" rel="noopener noreferrer">
             <img src={githubIcon} alt="Github icon" />
           </a>
           <a>
@@ -70,7 +75,7 @@ function Hero() {
           </a>
         </span>
         <p className={styles.description}>
-          WEB
+          Transformando ideas en experiencias web modernas.
         </p>
         <a href={CV} download>
           <button className="hover">Resume</button>
