@@ -5,6 +5,7 @@ import Skills from './sections/Skills/Skills';
 import Education from './sections/Education/Education';
 import Contact from './sections/Contact/Contact';
 import Footer from './sections/Footer/Footer';
+import BackToTop from './common/BackToTop';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Education />
       <Contact />
       <Footer />
+      <BackToTop />
     </>
   );
 }
