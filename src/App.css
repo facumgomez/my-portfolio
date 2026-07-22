@@ -80,6 +80,25 @@ p {
   border-width: 0;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888888; 
+  border-radius: 10px;       
+  border: 2px solid transparent; 
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555555; 
+}
+
 @media (width >= 800px) {
   #root {
     gap: 100px;
