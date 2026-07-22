@@ -59,21 +59,21 @@ function Contact() {
 
   return (
     <section id="contact" className={styles.container}>
-      <h1 className="sectionTitle">Contact</h1>
+      <h1 className="sectionTitle">Contacto</h1>
       <form onSubmit={handleSubmit}>
         <div className="formGroup">
-          <label htmlFor="name" className="srOnly">Name</label>
-          <input type="text" name="name" id="name" placeholder="Name" required />
+          <label htmlFor="name" className="srOnly">Nombre</label>
+          <input type="text" name="name" id="name" placeholder="Nombre" required />
         </div>
         <div className="formGroup">
-          <label htmlFor="email" className="srOnly">Email</label>
-          <input type="email" name="email" id="email" placeholder="Email" required />
+          <label htmlFor="email" className="srOnly">Correo Electrónico</label>
+          <input type="email" name="email" id="email" placeholder="Correo Electrónico" required />
         </div>
         <div className="formGroup">
-          <label htmlFor="message" className="srOnly">Message</label>
-          <textarea name="message" id="message" placeholder="Message" required></textarea>
+          <label htmlFor="message" className="srOnly">Mensaje</label>
+          <textarea name="message" id="message" placeholder="Mensaje" required></textarea>
         </div>
-        <input className="hover btn" type="submit" value="Submit" />
+        <input className="hover btn" type="submit" value="Enviar" />
       </form>
     </section>
   );

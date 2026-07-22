@@ -4,8 +4,8 @@ function Footer() {
   return (
     <section id="footer" className={styles.container}>
       <p>
-        &copy; 2025 Facundo Gómez. <br />
-        All rights reserved.
+        &copy; 2026 Facundo Gómez. <br />
+        Todos los derechos reservados.
       </p>
     </section>
   );

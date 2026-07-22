@@ -17,43 +17,43 @@ return (
           src={fitpoint}
           link="https://github.com/facumgomez/js-ecommerce.git"
           h3="FitPoint Equipment"
-          p="Web Store"
+          p="Tienda Web"
         />
         <ProjectCard
           src={homedeco}
           link="https://github.com/facumgomez/reactjs-ecommerce.git"
           h3="Home Deco"
-          p="Ecommerce"
+          p="E-commerce"
         />
         <ProjectCard
           src={climahoy}
           link="https://github.com/facumgomez/app-clima.git"
           h3="ClimaHoy"
-          p="Climate App"
+          p="App del Clima"
         />
         <ProjectCard
           src={tateti}
           link="https://github.com/facumgomez/ta-te-ti.git"
           h3="TA-TE-TI"
-          p="Game App"
+          p="Juego"
         />
         <ProjectCard
           src={sorteoplus}
           link="https://github.com/facumgomez/sorteo-plus.git"
           h3="Sorteo Plus"
-          p="Lottery App"
+          p="App de Sorteo"
         />
         <ProjectCard
           src={memotest}
           link="https://github.com/facumgomez/app-memotest.git"
           h3="MemoTest Food"
-          p="Game App"
+          p="Juego de Memoria"
         />
         <ProjectCard
           src={encriptador}
           link="https://github.com/facumgomez/encriptador-texto.git"
           h3="Encriptador Texto"
-          p="Encriptador App"
+          p="App Encriptadora"
         />
       </div>
     </section>

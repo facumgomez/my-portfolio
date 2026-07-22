@@ -61,7 +61,7 @@ function Hero() {
           <br />
           Gómez
         </h1>
-        <h2>Frontend Developer</h2>
+        <h2>Desarrollador Frontend</h2>
         <span>
           <a href="https://linkedin.com/in/facundo-m-gomez" target="_blank" rel="noopener noreferrer">
             <img src={linkedinIcon} alt="Linkedin icon" />
@@ -78,7 +78,7 @@ function Hero() {
           Transformando ideas en experiencias web modernas.
         </p>
         <a href={CV} download>
-          <button className="hover">Resume</button>
+          <button className="hover">Descargar CV</button>
         </a>
       </div>
     </section>
