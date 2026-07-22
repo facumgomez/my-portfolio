@@ -81,6 +81,29 @@
   gap: 20px;
 }
 
+.typingEffect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30px;
+  white-space: nowrap;
+}
+
+.cursor {
+  font-weight: bold;
+  color: var(--text-color);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 @media (width >= 800px) {
   .container {
     flex-direction: row-reverse;

@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import styles from './HeroStyles.module.css';
 import heroImg from '../../assets/hero-img.png';
 import sun from '../../assets/sun.svg';
@@ -11,10 +12,27 @@ import emailDark from '../../assets/email-dark.svg';
 import CV from '../../assets/cv.pdf';
 import { useTheme } from '../../common/ThemeContext';
 import Swal from 'sweetalert2';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
 function Hero() {
   const { theme, toggleTheme } = useTheme();
+
+  const [typedText, setTypedText] = useState('');
+  const fullText = "DESARROLLADOR FRONTEND";
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const typingInterval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setTypedText(fullText.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 100);
+
+    return () => clearInterval(typingInterval);
+  }, []);
 
   const themeIcon = theme === 'light' ? sun : moon;
   const linkedinIcon = theme === 'light' ? linkedinLight : linkedinDark;
@@ -67,7 +85,11 @@ function Hero() {
           <br />
           Gómez
         </h1>
-        <h2>Desarrollador Frontend</h2>
+        <h2 className={styles.typingEffect}>
+          {typedText}
+          <span className={styles.cursor}>|</span>
+        </h2>
+        
         <span>
           <a href="https://linkedin.com/in/facundo-m-gomez" target="_blank" rel="noopener noreferrer">
             <img src={linkedinIcon} alt="Linkedin icon" />
