@@ -21,8 +21,9 @@ function Projects() {
     { id: 7, src: memotest, link: "https://github.com/facumgomez/app-memotest.git", h3: "MemoTest Food", p: "Juego de Memoria" },
     { id: 8, src: encriptador, link: "https://github.com/facumgomez/encriptador-texto.git", h3: "Encriptador Texto", p: "App Encriptadora" }
   ];
-return (
-  <section id="projects" className={styles.container}>
+
+  return (
+    <section id="projects" className={styles.container}>
       <h1 className="sectionTitle">Proyectos</h1>
       <div className={styles.projectsContainer}>
         {projectsData.map((project, index) => (
@@ -40,6 +41,7 @@ return (
               link={project.link}
               h3={project.h3}
               p={project.p}
+              alt={`Logo del proyecto ${project.h3}`}
             />
           </motion.div>
         ))}
