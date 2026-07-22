@@ -99,6 +99,16 @@ p {
   background-color: #555555; 
 }
 
+::selection {
+  background-color: #8b5cf6; 
+  color: #ffffff; 
+}
+
+::-moz-selection {
+  background-color: #8b5cf6;
+  color: #ffffff;
+}
+
 .backToTopBtn {
   position: fixed;
   bottom: 30px;
