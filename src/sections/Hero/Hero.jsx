@@ -12,8 +12,7 @@ import emailDark from '../../assets/email-dark.svg';
 import CV from '../../assets/cv.pdf';
 import { useTheme } from '../../common/ThemeContext';
 import Swal from 'sweetalert2';
-import { motion } from 'framer-motion';
-
+import { motion, useMotionValue, useTransform } from 'framer-motion'; 
 function Hero() {
   const { theme, toggleTheme } = useTheme();
 
@@ -33,6 +32,26 @@ function Hero() {
 
     return () => clearInterval(typingInterval);
   }, []);
+
+
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const rotateX = useTransform(y, [-100, 100], [15, -15]);
+  const rotateY = useTransform(x, [-100, 100], [-15, 15]);
+
+  const handleMouseMove = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    x.set(event.clientX - centerX);
+    y.set(event.clientY - centerY);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
 
   const themeIcon = theme === 'light' ? sun : moon;
   const linkedinIcon = theme === 'light' ? linkedinLight : linkedinDark;
@@ -62,10 +81,18 @@ function Hero() {
   return (
     <section id="hero" className={styles.container}>
       <div className={styles.colorModeContainer}>
-        <img
+        <motion.img
           src={heroImg}
           className={styles.hero}
           alt="Profile picture of Facundo Gómez"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          style={{
+            rotateX: rotateX,
+            rotateY: rotateY,
+            perspective: 1000,
+          }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
         />
         <img
           className={styles.colorMode}
@@ -85,6 +112,7 @@ function Hero() {
           <br />
           Gómez
         </h1>
+        
         <h2 className={styles.typingEffect}>
           {typedText}
           <span className={styles.cursor}>|</span>
