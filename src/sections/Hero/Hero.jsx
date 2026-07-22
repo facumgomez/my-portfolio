@@ -80,9 +80,6 @@ function Hero() {
             style={{ cursor: 'pointer' }} />
           </a>
         </span>
-        <p className={styles.description}>
-          Transformando ideas en experiencias web modernas.
-        </p>
         <a href={CV} download>
           <button className="hover">Descargar CV</button>
         </a>

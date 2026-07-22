@@ -23,6 +23,7 @@
   }
   
   input, textarea {
+    font-family: monospace;
     border-radius: 20px;
     border: #888 1px solid;
     box-sizing: border-box;

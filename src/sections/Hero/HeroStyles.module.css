@@ -64,16 +64,20 @@
 }
 
 .colorMode:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
   
 .description {
-  max-width: 24ch;
+  max-width: 300px;
+  text-align: center;
+  margin: 0 auto;
 }
   
 .info {
   display: flex;
   flex-direction: column;
+  align-items: center; 
+  text-align: center;  
   gap: 20px;
   }
 
