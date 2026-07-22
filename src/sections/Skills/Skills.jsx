@@ -25,7 +25,6 @@ function Skills() {
             {category.map((skill) => (
               <SkillList key={skill} src={checkMarkIcon} skill={skill} />
             ))}
-            
           </div>
           <hr />
         </React.Fragment>
