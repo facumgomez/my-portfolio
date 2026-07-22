@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './SkillsStyles.module.css';
 import checkMarkIconDark from '../../assets/checkmark-dark.svg';
 import checkMarkIconLight from '../../assets/checkmark-light.svg';
@@ -8,39 +9,27 @@ function Skills() {
   const { theme } = useTheme();
   const checkMarkIcon = theme === 'light' ? checkMarkIconLight : checkMarkIconDark;
 
+  const skillCategories = [
+    ["HTML", "CSS", "JavaScript", "TypeScript", "React"],
+    ["Node.js", "Express.js", "MongoDB", "Sass"],
+    ["Bootstrap", "Tailwind CSS", "Git", "Firebase", "Socket.IO"],
+    ["Mongoose", "Mocha", "Postman", "jQuery"]
+  ];
+
   return (
     <section id="skills" className={styles.container}>
       <h1 className="sectionTitle">Habilidades</h1>
-      <div className={styles.skillList}>
-        <SkillList src={checkMarkIcon} skill="HTML" />
-        <SkillList src={checkMarkIcon} skill="CSS" />
-        <SkillList src={checkMarkIcon} skill="JavaScript" />
-        <SkillList src={checkMarkIcon} skill="TypeScript" />
-        <SkillList src={checkMarkIcon} skill="React" />
-      </div>
-      <hr />
-      <div className={styles.skillList}>
-        <SkillList src={checkMarkIcon} skill="Node.js" />
-        <SkillList src={checkMarkIcon} skill="Express.js" />
-        <SkillList src={checkMarkIcon} skill="MongoDB" />
-        <SkillList src={checkMarkIcon} skill="Sass" />
-      </div>
-      <hr />
-      <div className={styles.skillList}>
-        <SkillList src={checkMarkIcon} skill="Bootstrap" />
-        <SkillList src={checkMarkIcon} skill="Tailwind CSS" />
-        <SkillList src={checkMarkIcon} skill="Git" />
-        <SkillList src={checkMarkIcon} skill="Firebase" />
-        <SkillList src={checkMarkIcon} skill="Socket.IO" />
-      </div>
-      <hr />
-      <div className={styles.skillList}>
-        <SkillList src={checkMarkIcon} skill="Mongoose" />
-        <SkillList src={checkMarkIcon} skill="Mocha" />
-        <SkillList src={checkMarkIcon} skill="Postman" />
-        <SkillList src={checkMarkIcon} skill="jQuery" />
-      </div>
-      <hr />
+      {skillCategories.map((category, index) => (
+        <React.Fragment key={index}>
+          <div className={styles.skillList}>
+            {category.map((skill) => (
+              <SkillList key={skill} src={checkMarkIcon} skill={skill} />
+            ))}
+            
+          </div>
+          <hr />
+        </React.Fragment>
+      ))}
     </section>
   );
 }
