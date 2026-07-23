@@ -130,9 +130,16 @@ function Hero() {
             style={{ cursor: 'pointer' }} />
           </a>
         </span>
-        <a href={CV} download>
+        <motion.a 
+          href={CV} 
+          download
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          animate={{ scale: [1, 1.03, 1],}}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
           <button className="hover">Descargar CV</button>
-        </a>
+        </motion.a>
       </motion.div>
     </section>
   );
