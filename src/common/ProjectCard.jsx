@@ -1,12 +1,37 @@
-import React from 'react';
-
-function ProjectCard({ src, link, h3, p }) {
+function ProjectCard({ src, h3, p, githubLink, demoLink, styles }) {
   return (
-    <a href={link} target="_blank" rel="noopener noreferrer">
-      <img className="hover" src={src} alt={`${h3} logo`} loading="lazy" />
-      <h3>{h3}</h3>
-      <p>{p}</p>
-    </a>
+    <div className={styles.projectCard}>
+      <div className={styles.projectImageWrapper}>
+        <img src={src} alt={`${h3} preview`} className={styles.projectImage} />
+      </div>
+
+      <div className={styles.projectContent}>
+        <h3>{h3}</h3>
+        <p>{p}</p>
+
+        <div className={styles.projectLinks}>
+          <a
+            href={githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.btnOutline}
+          >
+            Repo
+          </a>
+
+          {demoLink && (
+            <a
+              href={demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnOutline}
+            >
+              Demo
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
   );
 }
 

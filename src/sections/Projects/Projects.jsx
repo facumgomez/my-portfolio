@@ -12,14 +12,14 @@ import { motion } from 'framer-motion';
 
 function Projects() {
   const projectsData = [
-    { id: 1, src: appcata, link: "https://github.com/facumgomez/registro-faltas", h3: "Asistencia Cata", p: "App de Asistencia" },
-    { id: 2, src: fitpoint, link: "https://github.com/facumgomez/js-ecommerce.git", h3: "FitPoint Equipment", p: "Tienda Web" },
-    { id: 3, src: homedeco, link: "https://github.com/facumgomez/reactjs-ecommerce.git", h3: "Home Deco", p: "E-commerce" },
-    { id: 4, src: climahoy, link: "https://github.com/facumgomez/app-clima.git", h3: "ClimaHoy", p: "App del Clima" },
-    { id: 5, src: tateti, link: "https://github.com/facumgomez/ta-te-ti.git", h3: "TA-TE-TI", p: "Juego" },
-    { id: 6, src: sorteoplus, link: "https://github.com/facumgomez/sorteo-plus.git", h3: "Sorteo Plus", p: "App de Sorteos" },
-    { id: 7, src: memotest, link: "https://github.com/facumgomez/app-memotest.git", h3: "MemoTest Food", p: "Juego de Memoria" },
-    { id: 8, src: encriptador, link: "https://github.com/facumgomez/encriptador-texto.git", h3: "Encriptador Texto", p: "App Encriptadora" }
+    { id: 1, src: appcata, githubLink: "https://github.com/facumgomez/registro-faltas", demoLink: "", h3: "Asistencia Cata", p: "App de Asistencia desarrollada para gestión y control." },
+    { id: 2, src: fitpoint, githubLink: "https://github.com/facumgomez/js-ecommerce.git", demoLink: "", h3: "FitPoint Equipment", p: "Tienda web e-commerce orientada a productos de fitness." },
+    { id: 3, src: homedeco, githubLink: "https://github.com/facumgomez/reactjs-ecommerce.git", demoLink: "", h3: "Home Deco", p: "E-commerce minimalista y moderno para decoración del hogar." },
+    { id: 4, src: climahoy, githubLink: "https://github.com/facumgomez/app-clima.git", demoLink: "", h3: "ClimaHoy", p: "Aplicación del clima en tiempo real conectada a una API." },
+    { id: 5, src: tateti, githubLink: "https://github.com/facumgomez/ta-te-ti.git", demoLink: "", h3: "TA-TE-TI", p: "Clásico juego interactivo desarrollado con lógica de programación." },
+    { id: 6, src: sorteoplus, githubLink: "https://github.com/facumgomez/sorteo-plus.git", demoLink: "", h3: "Sorteo Plus", p: "Herramienta web rápida y dinámica para realizar sorteos." },
+    { id: 7, src: memotest, githubLink: "https://github.com/facumgomez/app-memotest.git", demoLink: "", h3: "MemoTest Food", p: "Juego de memoria visual con temática gastronómica." },
+    { id: 8, src: encriptador, githubLink: "https://github.com/facumgomez/encriptador-texto.git", demoLink: "", h3: "Encriptador Texto", p: "App interactiva para encriptar y desencriptar mensajes." }
   ];
 
   return (
@@ -33,15 +33,15 @@ function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: index * 0.15 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            style={{ width: '100%' }}
           >
             <ProjectCard
               src={project.src}
-              link={project.link}
+              githubLink={project.githubLink}
+              demoLink={project.demoLink}
               h3={project.h3}
               p={project.p}
-              alt={`Logo del proyecto ${project.h3}`}
+              styles={styles} 
             />
           </motion.div>
         ))}
