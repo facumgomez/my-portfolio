@@ -1,18 +1,24 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;   
   text-align: center;
   margin-top: 20px;
+  width: 100%;           
+  max-width: 600px;    
+  margin-left: auto;    
+  margin-right: auto;
+  padding: 0 20px;      
+  box-sizing: border-box;
 }
 
 .content h3 {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
   color: var(--text-color);
   margin-bottom: 5px;
 }
 
 .content p {
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   color: var(--text-color); 
 }
