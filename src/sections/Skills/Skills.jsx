@@ -29,9 +29,10 @@ function Skills() {
 
   const skillCategories = [
     ["HTML", "CSS", "JavaScript", "TypeScript", "React"],
-    ["Node.js", "Express.js", "MongoDB", "Sass"],
-    ["Bootstrap", "Tailwind CSS", "Git", "Firebase", "Socket.IO"],
-    ["Mongoose", "Mocha", "Postman", "jQuery"]
+    ["Git", "Node.js", "Express.js", "MongoDB", "Mongoose"],
+    ["SQL Server", "MySQL", "PostgreSQL", "HeidiSQL"],
+    ["Bootstrap", "Tailwind CSS", "Sass"],
+    ["Firebase", "Socket.IO", "Mocha", "Postman", "jQuery"],
   ];
 
   return (
