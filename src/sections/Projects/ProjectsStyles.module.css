@@ -156,6 +156,13 @@
   transform: scale(1.1); 
 }
 
+.btnOutline:focus-visible {
+  outline: 2px solid var(--text-color); 
+  outline-offset: 4px; 
+  background-color: rgba(136, 136, 136, 0.1); 
+  transform: translateY(-2px); 
+}
+
 @media (width >=800px) {
   .projectCard {
     flex-direction: row;
