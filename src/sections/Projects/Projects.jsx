@@ -1,6 +1,7 @@
 import styles from './ProjectsStyles.module.css';
 import fitpoint from '../../assets/fitpoint.png';
 import homedeco from '../../assets/homedeco.png';
+import piedrapapelotijera from '../../assets/piedrapapelotijera.png';
 import climahoy from '../../assets/climahoy.png';
 import tateti from '../../assets/tateti.png';
 import sorteoplus from '../../assets/sorteoplus.png';
@@ -42,6 +43,15 @@ function Projects() {
     },
     { 
       id: 4, 
+      src: piedrapapelotijera, 
+      githubLink: "https://github.com/facumgomez/piedra-papel-tijera", 
+      demoLink: "https://piedrapapeltijera-arg.vercel.app/", 
+      h3: "Piedra, Papel o Tijera", 
+      p: "Juego clásico interactivo está enfocado en una arquitectura limpia, modularidad y una interfaz minimalista",
+      techStack: ["TypeScript", "JavaScript", "HTML", "CSS"]
+    },
+    { 
+      id: 5, 
       src: climahoy, 
       githubLink: "https://github.com/facumgomez/app-clima.git", 
       demoLink: "https://climahoy.vercel.app/", 
@@ -50,7 +60,7 @@ function Projects() {
       techStack: ["JavaScript", "HTML", "CSS"]
     },
     { 
-      id: 5, 
+      id: 6, 
       src: tateti, 
       githubLink: "https://github.com/facumgomez/ta-te-ti.git", 
       demoLink: "https://tatetiapp.vercel.app/", 
@@ -59,7 +69,7 @@ function Projects() {
       techStack: ["JavaScript", "HTML", "CSS"]
     },
     { 
-      id: 6, 
+      id: 7, 
       src: sorteoplus, 
       githubLink: "https://github.com/facumgomez/sorteo-plus.git", 
       demoLink: "https://sorteoplus.vercel.app/", 
@@ -68,7 +78,7 @@ function Projects() {
       techStack: ["JavaScript", "HTML", "CSS"]
     },
     { 
-      id: 7, 
+      id: 8, 
       src: memotest, 
       githubLink: "https://github.com/facumgomez/app-memotest.git", 
       demoLink: "https://memotesgame.vercel.app/", 
@@ -77,7 +87,7 @@ function Projects() {
       techStack: ["React", "JavaScript", "HTML", "CSS"]
     },
     { 
-      id: 8, 
+      id: 9, 
       src: encriptador, 
       githubLink: "https://github.com/facumgomez/encriptador-texto.git", 
       demoLink: "https://encriptadortext.vercel.app/", 
@@ -86,7 +96,7 @@ function Projects() {
       techStack: ["JavaScript", "HTML", "CSS"]
     },
     { 
-      id: 9, 
+      id: 10, 
       src: backend, 
       githubLink: "https://github.com/facumgomez/proyectobackend-facundomartingomez", 
       demoLink: "", 
