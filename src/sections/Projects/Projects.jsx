@@ -19,8 +19,8 @@ function Projects() {
       src: appcata, 
       githubLink: "https://github.com/facumgomez/registro-faltas", 
       demoLink: "https://registro-faltas.vercel.app/", 
-      h3: "Asistencia Cata", 
-      p: "App de Asistencia desarrollada para gestión y control.",
+      h3: "Inasistencia Cata", 
+      p: "App de Inasistencia desarrollada para gestión y control.",
       techStack: ["JavaScript", "Firebase", "CSS"]
     },
     { 
